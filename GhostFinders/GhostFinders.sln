@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostFinders.CSharp.Plugins", "GhostFinders.CSharp.Plugins.csproj", "{4A21D3FD-ECAD-4AB4-E06C-1BDEBF200198}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostFinders.CSharp", "GhostFinders.CSharp.csproj", "{2483F996-13F4-1640-A27B-021F58569121}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GhostFinders.CSharp.Editor", "GhostFinders.CSharp.Editor.csproj", "{78FB17A8-78DF-4AD2-82CE-436A7AEE4974}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A21D3FD-ECAD-4AB4-E06C-1BDEBF200198}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A21D3FD-ECAD-4AB4-E06C-1BDEBF200198}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A21D3FD-ECAD-4AB4-E06C-1BDEBF200198}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A21D3FD-ECAD-4AB4-E06C-1BDEBF200198}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2483F996-13F4-1640-A27B-021F58569121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2483F996-13F4-1640-A27B-021F58569121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2483F996-13F4-1640-A27B-021F58569121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2483F996-13F4-1640-A27B-021F58569121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78FB17A8-78DF-4AD2-82CE-436A7AEE4974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78FB17A8-78DF-4AD2-82CE-436A7AEE4974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78FB17A8-78DF-4AD2-82CE-436A7AEE4974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78FB17A8-78DF-4AD2-82CE-436A7AEE4974}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
