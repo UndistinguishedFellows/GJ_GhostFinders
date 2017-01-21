@@ -8,6 +8,7 @@ public class spawnManager : MonoBehaviour {
     int maxGhosts;
     [SerializeField]
     GameObject ghost = null;
+    public float ghostScore = 250;
     // Use this for initialization
     void Start () {
         Transform[] ts = gameObject.GetComponentsInChildren<Transform>();
@@ -24,7 +25,8 @@ public class spawnManager : MonoBehaviour {
         {
             if (ghost != null)
             {
-                Instantiate(ghost, ts[item].position, ts[item].rotation);
+                GameObject go = (GameObject)Instantiate(ghost, ts[item].position, ts[item].rotation);
+                go.GetComponent<Ghost>().ghostScore = ghostScore;
             }            
         }
 

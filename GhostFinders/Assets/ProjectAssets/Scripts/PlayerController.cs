@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour {
 
     public bool canMove = true;
 
+    public PointsLabel pointsLabelScript = null;
+
     Vector3 lastFrameMousePos = Vector3.zero;
     float lastFrameMouseWheel = 0;
 
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour {
     void Start ()
     {
         flashElapsed = flashDuration + 1;
+        pointsLabelScript = GetComponent<PointsLabel>();
     }
 	
 	void Update ()
@@ -283,7 +286,7 @@ public class PlayerController : MonoBehaviour {
 
         ghostsDetected.Clear();
         ghostsDetected.AddRange(ghostsDetectedNow);
-        Debug.Log(ghostsDetected.Count);
+        //Debug.Log(ghostsDetected.Count);
     }
 
     void takePhoto()
@@ -298,6 +301,7 @@ public class PlayerController : MonoBehaviour {
         leadBoard.currentScore.points += totalPoints;
 
         //TODO: Do things with this points.
+        pointsLabelScript.showPoints(totalPoints);
 
         flashElapsed = 0.0f;
     }
