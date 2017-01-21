@@ -13,6 +13,7 @@ public class Ghost : MonoBehaviour {
     GameObject body;
     [SerializeField]
     public spawnManager spawn = null;
+
     public float ghostScore = 25.0f; //This valor should be assigned from a "Ghost manager"
 
     bool caught = false;

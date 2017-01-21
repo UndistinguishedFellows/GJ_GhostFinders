@@ -13,9 +13,9 @@ public class spawnManager : MonoBehaviour {
     public int ghostCounter = 0;
     [SerializeField]
     public int ghostsHunted = 0;
-
-
     public List<GameObject> ghostList = null;
+
+    public float ghostScore = 250;
     // Use this for initialization
     void Start () {
         Transform[] ts = gameObject.GetComponentsInChildren<Transform>();
@@ -32,7 +32,10 @@ public class spawnManager : MonoBehaviour {
         {
             if (ghost != null)
             {
-                ghostList.Add((GameObject)Instantiate(ghost, ts[item].position, ts[item].rotation));
+                GameObject go = (GameObject)Instantiate(ghost, ts[item].position, ts[item].rotation);
+                go.GetComponent<Ghost>().ghostScore = ghostScore;
+                ghostList.Add(go);
+                go.GetComponent<Ghost>().spawn = this;
             }            
         }
         ghostCounter = ghostList.Count;

@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour {
 
     public bool canMove = true;
 
+    public PointsLabel pointsLabelScript = null;
+
     Vector3 lastFrameMousePos = Vector3.zero;
     float lastFrameMouseWheel = 0;
 
@@ -32,6 +34,8 @@ public class PlayerController : MonoBehaviour {
     float intensity = 1.0f;
     [SerializeField, Range(0.1f, 20.0f)]
     float wave_longitude = 1.0f;
+
+    public LeadBoard leadBoard = null;
 
     private List<GameObject> ghostsDetected;
     private List<GameObject> ghostsDetectedNow;
@@ -55,6 +59,7 @@ public class PlayerController : MonoBehaviour {
     {
         flashElapsed = flashDuration + 1;
         win = GetComponentInParent<Win>();
+        pointsLabelScript = GetComponent<PointsLabel>();
     }
 	
 	void Update ()
@@ -299,7 +304,10 @@ public class PlayerController : MonoBehaviour {
             totalPoints += go.GetComponent<Ghost>().onPhotoTaken(fLColor) * intensity;
         }
 
+        leadBoard.currentScore.points += totalPoints;
+
         //TODO: Do things with this points.
+        pointsLabelScript.showPoints(totalPoints);
 
         flashElapsed = 0.0f;
     }
