@@ -2,13 +2,10 @@
 using System.Collections;
 using System;
 
-[System.Serializable]
 public class Score
 {
-
-    public static Score current;
     public string name;
-    public int points;
+    public float points;
 
     public Score()
     {
@@ -16,4 +13,9 @@ public class Score
         points = 0;
     }
 
+    public Score(string _name)
+    {
+        name = _name;
+        points = 0;
+    }
 }

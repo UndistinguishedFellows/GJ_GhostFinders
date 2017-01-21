@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField, Range(0.1f, 20.0f)]
     float wave_longitude = 1.0f;
 
+    public LeadBoard leadBoard = null;
+
     private List<GameObject> ghostsDetected;
     private List<GameObject> ghostsDetectedNow;
     private Ray ray;
@@ -292,6 +294,8 @@ public class PlayerController : MonoBehaviour {
         {
             totalPoints += go.GetComponent<Ghost>().onPhotoTaken(fLColor) * intensity;
         }
+
+        leadBoard.currentScore.points += totalPoints;
 
         //TODO: Do things with this points.
 
