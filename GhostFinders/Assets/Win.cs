@@ -12,7 +12,13 @@ public class Win : MonoBehaviour {
     [SerializeField]
     float timeLeft = 0;
     [SerializeField]
-    Text text = null;
+    Text timer = null;
+    [SerializeField]
+    Text ghostsLeft = null;
+    [SerializeField]
+    Text points = null;
+    [SerializeField]
+    LeadBoard lb = null;
     // Use this for initialization
     void Start () {
 	    
@@ -28,10 +34,13 @@ public class Win : MonoBehaviour {
             {
                 timeLeft = 0;
                 endGame = true;
+                lb.onLevelEnd();
             }
         }
         float t = Mathf.Round(timeLeft * 1.0f) / 1.0f;
-        text.text = t.ToString() + " seconds";
+        timer.text = t.ToString() + " seconds";
+        ghostsLeft.text = "Ghosts left: " + spawner.GetComponent<spawnManager>().ghostCounter.ToString();
+        points.text = "Points: " + lb.currentScore.points.ToString();
 
         if (endGame)
         {

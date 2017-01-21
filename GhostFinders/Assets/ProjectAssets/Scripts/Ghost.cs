@@ -251,7 +251,7 @@ public class Ghost : MonoBehaviour {
             default:
                 break;
         }
-
+        spawn.ghostCounter--;
         return ghostScore * multiplier;
     }
     void OnDrawGizmos()

@@ -11,8 +11,6 @@ public class spawnManager : MonoBehaviour {
     GameObject ghost = null;
     [SerializeField]
     public int ghostCounter = 0;
-    [SerializeField]
-    public int ghostsHunted = 0;
     public List<GameObject> ghostList = null;
 
     public float ghostScore = 250;
@@ -39,6 +37,7 @@ public class spawnManager : MonoBehaviour {
             }            
         }
         ghostCounter = ghostList.Count;
+
 	}
 	
 	// Update is called once per frame
