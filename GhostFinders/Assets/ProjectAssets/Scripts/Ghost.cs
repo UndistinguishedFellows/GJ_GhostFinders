@@ -252,7 +252,12 @@ public class Ghost : MonoBehaviour {
 
         return ghostScore * multiplier;
     }
-
+    void OnDrawGizmos()
+    {
+        Color color = new Color(1, 0.5f, 0.25f);
+        Gizmos.color = color;
+        Gizmos.DrawSphere(transform.position, 1);
+    }
 
     //------------------------------------------
 }
