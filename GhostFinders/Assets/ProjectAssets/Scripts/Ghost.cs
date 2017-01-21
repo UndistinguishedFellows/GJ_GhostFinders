@@ -14,6 +14,8 @@ public class Ghost : MonoBehaviour {
 
     public float ghostScore = 25.0f; //This valor should be assigned from a "Ghost manager"
 
+    bool caught = false;
+
     //------------------------------------------
 
     void Start ()
@@ -51,7 +53,12 @@ public class Ghost : MonoBehaviour {
 	
 	void Update ()
     {
-               
+        if(caught)
+        {
+            //TODO: Do Caught/Die things here(play anim, particles, etc.)
+
+            //if anim is finished destroy gameobject
+        }
     }
 
     //------------------------------------------
@@ -159,6 +166,7 @@ public class Ghost : MonoBehaviour {
 
         //1.Disable collider so that next frame wont be detected.
         GetComponent<Collider>().enabled = false;
+        caught = true;
 
         //2.Calc % of points you may get.
         /*
