@@ -6,13 +6,13 @@ using System.Collections;
 public class Scripts : MonoBehaviour {    
     public enum colors
     {
+        unknown = 0,
         blue,
         red,
         green,
         cyan,
         magenta,
-        yellow,
-        unknown
+        yellow
     }
 
     public enum DIRECTION
@@ -28,13 +28,47 @@ public class Scripts : MonoBehaviour {
         D_UP_LEFT,
         D_UNKNOWN
     }
-    // Use this for initialization
-    void Start () {
+
+
+    //--------------------------
+
+    public static Color getColor(colors col)
+    {
+        Color ret = Color.black;
+
+        switch(col)
+        {
+            case colors.blue:
+                ret = Color.blue;
+        break;
+            case colors.red:
+                ret = Color.red;
+                break;
+            case colors.green:
+                ret = Color.green;
+                break;
+            case colors.cyan:
+                ret = Color.cyan;
+                break;
+            case colors.magenta:
+                ret = Color.magenta;
+                break;
+            case colors.yellow:
+                ret = Color.yellow;
+                break;
+        }
+
+        return ret;
+    }
+
+
+    void Start ()
+    {
 	
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 	
 	}
 }
