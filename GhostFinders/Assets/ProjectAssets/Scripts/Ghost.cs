@@ -20,6 +20,8 @@ public class Ghost : MonoBehaviour {
     [SerializeField]
     Sprite cyan;
 
+    public float ghostScore = 25.0f; //This valor should be assigned from a "Ghost manager"
+
     //------------------------------------------
 
     void Start ()
@@ -69,13 +71,96 @@ public class Ghost : MonoBehaviour {
         Debug.Log("Ghost lost...");
     }
 
-    public int onPhotoTaken(Scripts.colors flashLightColor)
+    public float onPhotoTaken(Scripts.colors flashLightColor)
     {
-        int points = 0;
-
         Debug.Log("Photo taken!");
 
-        return points;
+        //1.Disable collider so that next frame wont be detected.
+        GetComponent<Collider>().enabled = false;
+
+        //2.Calc % of points you may get.
+        /*
+         -Oposite: 100%
+         -Next to oposite: 50%
+         -Next to same color: 25%
+         -Same color: 10%
+         */
+
+        float multiplier = 0.0f;
+
+        switch (type) //Switch ghost color will calc the points multiplier
+        {
+            case Scripts.colors.blue:
+                if (flashLightColor == Scripts.colors.yellow)
+                    multiplier = 1.0f;
+                else if (flashLightColor == Scripts.colors.red || flashLightColor == Scripts.colors.green)
+                    multiplier = 0.5f;
+                else if (flashLightColor == Scripts.colors.magenta || flashLightColor == Scripts.colors.cyan)
+                    multiplier = 0.25f;
+                else
+                    multiplier = 0.1f;
+                break;
+
+            case Scripts.colors.red:
+                if (flashLightColor == Scripts.colors.cyan)
+                    multiplier = 1.0f;
+                else if (flashLightColor == Scripts.colors.blue || flashLightColor == Scripts.colors.green)
+                    multiplier = 0.5f;
+                else if (flashLightColor == Scripts.colors.magenta || flashLightColor == Scripts.colors.yellow)
+                    multiplier = 0.25f;
+                else
+                    multiplier = 0.1f;
+                break;
+
+            case Scripts.colors.green:
+                if (flashLightColor == Scripts.colors.magenta)
+                    multiplier = 1.0f;
+                else if (flashLightColor == Scripts.colors.blue || flashLightColor == Scripts.colors.red)
+                    multiplier = 0.5f;
+                else if (flashLightColor == Scripts.colors.cyan || flashLightColor == Scripts.colors.yellow)
+                    multiplier = 0.25f;
+                else
+                    multiplier = 0.1f;
+                break;
+
+            case Scripts.colors.cyan:
+                if (flashLightColor == Scripts.colors.red)
+                    multiplier = 1.0f;
+                else if (flashLightColor == Scripts.colors.magenta || flashLightColor == Scripts.colors.yellow)
+                    multiplier = 0.5f;
+                else if (flashLightColor == Scripts.colors.green || flashLightColor == Scripts.colors.blue)
+                    multiplier = 0.25f;
+                else
+                    multiplier = 0.1f;
+                break;
+
+            case Scripts.colors.magenta:
+                if (flashLightColor == Scripts.colors.green)
+                    multiplier = 1.0f;
+                else if (flashLightColor == Scripts.colors.blue || flashLightColor == Scripts.colors.red)
+                    multiplier = 0.5f;
+                else if (flashLightColor == Scripts.colors.cyan || flashLightColor == Scripts.colors.yellow)
+                    multiplier = 0.25f;
+                else
+                    multiplier = 0.1f;
+                break;
+
+            case Scripts.colors.yellow:
+                if (flashLightColor == Scripts.colors.blue)
+                    multiplier = 1.0f;
+                else if (flashLightColor == Scripts.colors.magenta || flashLightColor == Scripts.colors.cyan)
+                    multiplier = 0.5f;
+                else if (flashLightColor == Scripts.colors.red || flashLightColor == Scripts.colors.green)
+                    multiplier = 0.25f;
+                else
+                    multiplier = 0.1f;
+                break;
+
+            default:
+                break;
+        }
+
+        return ghostScore * multiplier;
     }
 
 
