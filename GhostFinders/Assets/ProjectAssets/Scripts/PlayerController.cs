@@ -250,11 +250,12 @@ public class PlayerController : MonoBehaviour {
                 ray.direction = (col.transform.position - transform.position).normalized;
                 ray.origin = ray.GetPoint(frustum.nearClipPlane);
 
-                if (Physics.Raycast(ray, out hit, frustum.farClipPlane, ghostMask))
+                if (Physics.Raycast(ray, out hit, frustum.farClipPlane, LayerMask.NameToLayer("Everything")))
                 {
                     if (hit.collider.gameObject.CompareTag("Ghost"))
                         ghostsDetectedNow.Add(col.gameObject);
                 }
+                Debug.DrawLine(ray.origin, hit.point);
             }
         }
 
