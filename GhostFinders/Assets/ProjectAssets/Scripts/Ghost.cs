@@ -138,7 +138,7 @@ public class Ghost : MonoBehaviour {
 
         Color bodyColor = body.GetComponent<SpriteRenderer>().color;
         bodyColor.a = multiplier;
-        body.GetComponent<SpriteRenderer>().color = bodyColor;
+        body.GetComponent<SpriteRenderer>().color = bodyColor; 
     }
 
     public void onGhostLost()

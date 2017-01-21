@@ -417,6 +417,7 @@
     <Compile Include="Assets\ProjectAssets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\Scripts.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\SteeringWander.cs" />
+    <Compile Include="Assets\ProjectAssets\Scripts\spawnManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\2DTilezoneFiles\CollisionData\dirt-tiles_collision_data.cd" />

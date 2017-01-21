@@ -14,7 +14,6 @@ public class Scripts : MonoBehaviour {
         magenta,
         yellow
     }
-
     public enum DIRECTION
     {
         D_UP = 0,

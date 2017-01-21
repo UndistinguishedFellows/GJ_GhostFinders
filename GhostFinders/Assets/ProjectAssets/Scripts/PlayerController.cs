@@ -280,6 +280,7 @@ public class PlayerController : MonoBehaviour {
 
         ghostsDetected.Clear();
         ghostsDetected.AddRange(ghostsDetectedNow);
+        Debug.Log(ghostsDetected.Count);
     }
 
     void takePhoto()
