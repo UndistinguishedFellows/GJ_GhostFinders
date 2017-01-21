@@ -115,10 +115,27 @@
     <Compile Include="Assets\2DTilezoneFiles\Editor\TileInfoEditor.cs" />
     <Compile Include="Assets\2DTilezoneFiles\Editor\TilesetEditor.cs" />
     <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Inspectors\BlackboardInspector.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Inspectors\GlobalBlackboardInspector.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Inspectors\GraphInspector.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Inspectors\GraphOwnerInspector.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Windows\ExternalInspectorWindow.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Windows\GraphEditor.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Windows\QuickPopup.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Windows\SceneGraphsEditorInspector.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Windows\TaskWizardWindow.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Windows\WelcomeWindow.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Modules\ActionListPlayer\Editor\ActionListPlayerInspector.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Modules\BehaviourTrees\Editor\BehaviourTreeOwnerInspector.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Modules\DialogueTrees\Editor\DialogueActorInspector.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Modules\DialogueTrees\Editor\DialogueTreeInspector.cs" />
+    <Compile Include="Assets\ParadoxNotion\NodeCanvas\Modules\Editor\Commands.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\2DTilezoneFiles\CollisionData\dirt-tiles_collision_data.cd" />
     <None Include="Assets\2DTilezoneFiles\CollisionData\roguelikeDungeon_collision_data.cd" />
+    <None Include="Assets\ParadoxNotion\NodeCanvas\!ReadMe!.txt" />
+    <None Include="Assets\ParadoxNotion\NodeCanvas\Framework\_Commons\Runtime\Serialization\_LICENSE - FULL SERIALIZER.txt" />
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
