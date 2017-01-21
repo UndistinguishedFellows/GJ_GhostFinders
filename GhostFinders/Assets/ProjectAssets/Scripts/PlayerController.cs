@@ -1,19 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-enum DIRECTION
-{
-    D_UP = 0,
-    D_UP_RIGHT,
-    D_RIGHT,
-    D_BACK_RIGHT,
-    D_DOWN_RIGHT,
-    D_DOWN,
-    D_DOWN_LEFT,
-    D_LEFT,
-    D_UP_LEFT,
-    D_UNKNOWN
-}
+
 
 public class PlayerController : MonoBehaviour {
 
@@ -21,7 +9,7 @@ public class PlayerController : MonoBehaviour {
     public Camera flashLightFrustum = null;
 
     Vector3 lastFrameMousePos = Vector3.zero;
-    DIRECTION direction = DIRECTION.D_UNKNOWN;
+    Scripts.DIRECTION direction = Scripts.DIRECTION.D_UNKNOWN;
 
     //----------------------------
 
@@ -48,51 +36,51 @@ public class PlayerController : MonoBehaviour {
 
 
             if (angle < 22.5 && angle > -22.5)
-                direction = DIRECTION.D_RIGHT;
+                direction = Scripts.DIRECTION.D_RIGHT;
             else if (angle >= 22.5 && angle <= 67.5)
-                direction = DIRECTION.D_UP_RIGHT;
+                direction = Scripts.DIRECTION.D_UP_RIGHT;
             else if (angle > 67.5 && angle < 112.5)
-                direction = DIRECTION.D_UP;
+                direction = Scripts.DIRECTION.D_UP;
             else if (angle >= 112.5 && angle <= 157.5)
-                direction = DIRECTION.D_UP_LEFT;
+                direction = Scripts.DIRECTION.D_UP_LEFT;
             else if (angle > 157.5 || angle < -157.5)
-                direction = DIRECTION.D_LEFT;
+                direction = Scripts.DIRECTION.D_LEFT;
             else if (angle >= -157.5 && angle <= -112.5)
-                direction = DIRECTION.D_DOWN_LEFT;
+                direction = Scripts.DIRECTION.D_DOWN_LEFT;
             else if (angle > -112.5 && angle < -67.5)
-                direction = DIRECTION.D_DOWN;
+                direction = Scripts.DIRECTION.D_DOWN;
             else if (angle >= -67.5 && angle <= -22.5)
-                direction = DIRECTION.D_DOWN_RIGHT;
+                direction = Scripts.DIRECTION.D_DOWN_RIGHT;
             else
                 direction = DIRECTION.D_UNKNOWN;
 
             switch (direction)
             {
-                case DIRECTION.D_UP:
+                case Scripts.DIRECTION.D_UP:
                     Debug.Log("UP");
                     break;
-                case DIRECTION.D_UP_RIGHT:
+                case Scripts.DIRECTION.D_UP_RIGHT:
                     Debug.Log("D_UP_RIGHT");
                     break;
-                case DIRECTION.D_RIGHT:
+                case Scripts.DIRECTION.D_RIGHT:
                     Debug.Log("D_RIGHT");
                     break;
-                case DIRECTION.D_DOWN_RIGHT:
+                case Scripts.DIRECTION.D_DOWN_RIGHT:
                     Debug.Log("D_DOWN_RIGHT");
                     break;
-                case DIRECTION.D_DOWN:
+                case Scripts.DIRECTION.D_DOWN:
                     Debug.Log("D_DOWN");
                     break;
-                case DIRECTION.D_DOWN_LEFT:
+                case Scripts.DIRECTION.D_DOWN_LEFT:
                     Debug.Log("D_DOWN_LEFT");
                     break;
-                case DIRECTION.D_LEFT:
+                case Scripts.DIRECTION.D_LEFT:
                     Debug.Log("D_LEFT");
                     break;
-                case DIRECTION.D_UP_LEFT:
+                case Scripts.DIRECTION.D_UP_LEFT:
                     Debug.Log("D_UP_LEFT");
                     break;
-                case DIRECTION.D_UNKNOWN:
+                case Scripts.DIRECTION.D_UNKNOWN:
                     Debug.Log("D_UNKNOWN");
                     break;
             }
