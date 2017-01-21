@@ -7,12 +7,18 @@ using System.Collections.Generic;
 public class PlayerController : MonoBehaviour {
 
     public Light flashLight = null;
+    public Light flash = null;
+    public float flashDuration = 0.5f;
+    float flashElapsed = 10.0f;
+
     public Camera frustum = null;
 
     public LayerMask ghostMask;
 
     public float photoCooldown = 2.5f; //Sec
     float elapsedTimeSinceLastPhoto = 0; //Sec
+
+    public bool canMove = true;
 
     Vector3 lastFrameMousePos = Vector3.zero;
     float lastFrameMouseWheel = 0;
@@ -43,26 +49,29 @@ public class PlayerController : MonoBehaviour {
 
     void Start ()
     {
-	
-	}
+        flashElapsed = flashDuration + 1;
+    }
 	
 	void Update ()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.y = 0;
-
-        if (mousePos != lastFrameMousePos)
+        if (canMove)
         {
-            lastFrameMousePos = mousePos;
-            Vector3 dir = mousePos - transform.position;
-            dir.Normalize();
-            dir.y = 0;
-            transform.LookAt(dir * 100);
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.y = 0;
 
-            calcDirection(dir);
+            if (mousePos != lastFrameMousePos)
+            {
+                lastFrameMousePos = mousePos;
+                Vector3 dir = mousePos - transform.position;
+                dir.Normalize();
+                dir.y = 0;
+                transform.LookAt(dir * 100);
+
+                calcDirection(dir);
+            }
+
+            changeColor();  //TODO: Maybe only handle input every certain ammount of time.
         }
-
-        changeColor();  //TODO: Maybe only handle input every certain ammount of time.
 
         checkForGhosts();   //TODO: Maybe only check ghosts every certain ammount of time, prob is more important to limit this than limit input.
 
@@ -72,6 +81,7 @@ public class PlayerController : MonoBehaviour {
             {
                 takePhoto();
                 elapsedTimeSinceLastPhoto = 0.0f;
+                canMove = false;
             }
         }
 
@@ -80,8 +90,18 @@ public class PlayerController : MonoBehaviour {
         intensity = Mathf.Abs(Mathf.Sin((3.14f / wave_longitude) * Time.realtimeSinceStartup));
         flashLight.intensity = 6 * intensity + 2;
         //Debug.Log(intensity);
-        
 
+        //If toke a photo, calc flash light duration
+        if (flashElapsed <= flashDuration)
+            flash.intensity = 8;
+        else if (flash.intensity > 0 && !canMove)
+        {
+            flash.intensity = 0;
+            canMove = true;
+        }
+
+        if(flashElapsed < 20.0f)
+            flashElapsed += Time.deltaTime;
     }
 
     void OnDrawGizmos()
@@ -272,6 +292,8 @@ public class PlayerController : MonoBehaviour {
         }
 
         //TODO: Do things with this points.
+
+        flashElapsed = 0.0f;
     }
 
 
