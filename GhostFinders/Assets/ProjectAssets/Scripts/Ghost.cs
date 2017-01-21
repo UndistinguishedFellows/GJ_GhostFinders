@@ -20,10 +20,12 @@ public class Ghost : MonoBehaviour {
     [SerializeField]
     Sprite cyan;
 
-    // Use this for initialization
-    void Start () {
+    //------------------------------------------
+
+    void Start ()
+    {
         //Random ghost type at spawn
-        type = (Scripts.colors)Random.Range(0, 5);        
+        type = (Scripts.colors)Random.Range(1, 6);        
         switch (type)
         {
             case Scripts.colors.blue:
@@ -50,9 +52,9 @@ public class Ghost : MonoBehaviour {
         gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
     }
 	
-	// Update is called once per frame
-	void Update () {
-        if (Debug.isDebugBuild)
+	void Update ()
+    {
+        /*if (Debug.isDebugBuild)
         {
             switch (type)
             {
@@ -78,7 +80,23 @@ public class Ghost : MonoBehaviour {
                     break;
             }
             gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
-        }
+        }*/
         
     }
+
+    //------------------------------------------
+
+    public void onGhostDetected(Scripts.colors flashLightColor)
+    {
+        Debug.Log("Ghost seen!");
+    }
+
+    public void onGhostLost()
+    {
+        Debug.Log("Ghost lost...");
+    }
+
+
+
+    //------------------------------------------
 }
