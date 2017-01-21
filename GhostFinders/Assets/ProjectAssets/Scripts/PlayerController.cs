@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour {
     Color flashLightColor = Color.white;
     Scripts.colors fLColor = Scripts.colors.blue;
 
+    [SerializeField]
+    float intensity = 1.0f;
+    [SerializeField, Range(0.1f, 20.0f)]
+    float wave_longitude = 1.0f;
+
     private List<GameObject> ghostsDetected;
     private List<GameObject> ghostsDetectedNow;
     private Ray ray;
@@ -71,6 +76,12 @@ public class PlayerController : MonoBehaviour {
         }
 
         elapsedTimeSinceLastPhoto += Time.deltaTime;
+
+        intensity = Mathf.Abs(Mathf.Sin((3.14f / wave_longitude) * Time.realtimeSinceStartup));
+        flashLight.intensity = 6 * intensity + 2;
+        //Debug.Log(intensity);
+        
+
     }
 
     void OnDrawGizmos()
@@ -253,11 +264,11 @@ public class PlayerController : MonoBehaviour {
 
     void takePhoto()
     {
-        int totalPoints = 0;
+        float totalPoints = 0;
 
         foreach(GameObject go in ghostsDetected)
         {
-            totalPoints += go.GetComponent<Ghost>().onPhotoTaken(fLColor);
+            totalPoints += go.GetComponent<Ghost>().onPhotoTaken(fLColor) * intensity;
         }
 
         //TODO: Do things with this points.
