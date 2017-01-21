@@ -79,6 +79,7 @@
     <Compile Include="Assets\2DTilezoneFiles\Scripts\PixelPerfectCamera.cs" />
     <Compile Include="Assets\2DTilezoneFiles\Scripts\TileInfo.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\ProjectAssets\Scripts\PlayerMove.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\2DTilezoneFiles\CollisionData\dirt-tiles_collision_data.cd" />
