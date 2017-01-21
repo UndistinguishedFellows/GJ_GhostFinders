@@ -69,6 +69,14 @@ public class Ghost : MonoBehaviour {
         Debug.Log("Ghost lost...");
     }
 
+    public int onPhotoTaken(Scripts.colors flashLightColor)
+    {
+        int points = 0;
+
+        Debug.Log("Photo taken!");
+
+        return points;
+    }
 
 
     //------------------------------------------

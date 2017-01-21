@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour {
 
     public LayerMask ghostMask;
 
+    public float photoCooldown = 2.5f; //Sec
+    float elapsedTimeSinceLastPhoto = 0; //Sec
+
     Vector3 lastFrameMousePos = Vector3.zero;
     float lastFrameMouseWheel = 0;
 
@@ -40,10 +43,34 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update ()
     {
-        handleInput();  //TODO: Maybe only handle input every certain ammount of time.
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.y = 0;
+
+        if (mousePos != lastFrameMousePos)
+        {
+            lastFrameMousePos = mousePos;
+            Vector3 dir = mousePos - transform.position;
+            dir.Normalize();
+            dir.y = 0;
+            transform.LookAt(dir * 100);
+
+            calcDirection(dir);
+        }
+
+        changeColor();  //TODO: Maybe only handle input every certain ammount of time.
 
         checkForGhosts();   //TODO: Maybe only check ghosts every certain ammount of time, prob is more important to limit this than limit input.
 
+        if (elapsedTimeSinceLastPhoto >= photoCooldown)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            {
+                takePhoto();
+                elapsedTimeSinceLastPhoto = 0.0f;
+            }
+        }
+
+        elapsedTimeSinceLastPhoto += Time.deltaTime;
     }
 
     void OnDrawGizmos()
@@ -77,57 +104,49 @@ public class PlayerController : MonoBehaviour {
             direction = Scripts.DIRECTION.D_UNKNOWN;
     }
 
-    void handleInput()
+    void changeColor()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.y = 0;
-
-        if (mousePos != lastFrameMousePos)
-        {
-            lastFrameMousePos = mousePos;
-            Vector3 dir = mousePos - transform.position;
-            dir.Normalize();
-            dir.y = 0;
-            transform.LookAt(dir * 100);
-
-            calcDirection(dir);
-        }
-
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
         {
             fLColor = (Scripts.colors)1;
             flashLightColor = Scripts.getColor(fLColor);
             flashLight.color = flashLightColor;
+            onFlashLightColorChanged();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
         {
             fLColor = (Scripts.colors)2;
             flashLightColor = Scripts.getColor(fLColor);
             flashLight.color = flashLightColor;
+            onFlashLightColorChanged();
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
         {
             fLColor = (Scripts.colors)3;
             flashLightColor = Scripts.getColor(fLColor);
             flashLight.color = flashLightColor;
+            onFlashLightColorChanged();
         }
         if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
         {
             fLColor = (Scripts.colors)4;
             flashLightColor = Scripts.getColor(fLColor);
             flashLight.color = flashLightColor;
+            onFlashLightColorChanged();
         }
         if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Keypad5))
         {
             fLColor = (Scripts.colors)5;
             flashLightColor = Scripts.getColor(fLColor);
             flashLight.color = flashLightColor;
+            onFlashLightColorChanged();
         }
         if (Input.GetKeyDown(KeyCode.Alpha6) || Input.GetKeyDown(KeyCode.Keypad6))
         {
             fLColor = (Scripts.colors)6;
             flashLightColor = Scripts.getColor(fLColor);
             flashLight.color = flashLightColor;
+            onFlashLightColorChanged();
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -139,6 +158,7 @@ public class PlayerController : MonoBehaviour {
 
             flashLightColor = Scripts.getColor(fLColor);
             flashLight.color = flashLightColor;
+            onFlashLightColorChanged();
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -150,6 +170,7 @@ public class PlayerController : MonoBehaviour {
 
             flashLightColor = Scripts.getColor(fLColor);
             flashLight.color = flashLightColor;
+            onFlashLightColorChanged();
         }
 
         float wheel = Input.GetAxis("Mouse ScrollWheel");
@@ -166,6 +187,7 @@ public class PlayerController : MonoBehaviour {
 
                 flashLightColor = Scripts.getColor(fLColor);
                 flashLight.color = flashLightColor;
+                onFlashLightColorChanged();
             }
             else if (wheel < 0)
             {
@@ -176,6 +198,7 @@ public class PlayerController : MonoBehaviour {
 
                 flashLightColor = Scripts.getColor(fLColor);
                 flashLight.color = flashLightColor;
+                onFlashLightColorChanged();
             }
         }
     }
@@ -226,6 +249,28 @@ public class PlayerController : MonoBehaviour {
 
         ghostsDetected.Clear();
         ghostsDetected.AddRange(ghostsDetectedNow);
+    }
+
+    void takePhoto()
+    {
+        int totalPoints = 0;
+
+        foreach(GameObject go in ghostsDetected)
+        {
+            totalPoints += go.GetComponent<Ghost>().onPhotoTaken(fLColor);
+        }
+
+        //TODO: Do things with this points.
+    }
+
+
+
+    void onFlashLightColorChanged()
+    {
+        foreach (GameObject go in ghostsDetected)
+        {
+            go.GetComponent<Ghost>().onGhostDetected(fLColor);
+        }
     }
 
 
