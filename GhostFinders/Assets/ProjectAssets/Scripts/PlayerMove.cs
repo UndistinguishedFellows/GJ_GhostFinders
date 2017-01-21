@@ -26,7 +26,7 @@ public class PlayerMove : MonoBehaviour {
             plController = GetComponentInChildren<PlayerController>();
 
         //TODO: Would be cool to slow speed of facing direction is diferent to movement direction.
-        if (plController.canMove)
+        if (plController.canMove && !plController.endGame)
         {
             if (Input.GetKey(KeyCode.W))
             {

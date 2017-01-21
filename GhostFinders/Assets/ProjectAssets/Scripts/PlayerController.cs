@@ -37,6 +37,10 @@ public class PlayerController : MonoBehaviour {
     private List<GameObject> ghostsDetectedNow;
     private Ray ray;
 
+    [SerializeField]
+    Win win = null;
+    public bool endGame = false;
+    
 
     //----------------------------
 
@@ -50,11 +54,14 @@ public class PlayerController : MonoBehaviour {
     void Start ()
     {
         flashElapsed = flashDuration + 1;
+        win = GetComponentInParent<Win>();
     }
 	
 	void Update ()
     {
-        if (canMove)
+        endGame = win.endGame;
+
+        if (canMove && !endGame)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.y = 0;
@@ -75,7 +82,7 @@ public class PlayerController : MonoBehaviour {
 
         checkForGhosts();   //TODO: Maybe only check ghosts every certain ammount of time, prob is more important to limit this than limit input.
 
-        if (elapsedTimeSinceLastPhoto >= photoCooldown)
+        if ((elapsedTimeSinceLastPhoto >= photoCooldown) && !endGame)
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
@@ -281,7 +288,6 @@ public class PlayerController : MonoBehaviour {
 
         ghostsDetected.Clear();
         ghostsDetected.AddRange(ghostsDetectedNow);
-        Debug.Log(ghostsDetected.Count);
     }
 
     void takePhoto()
