@@ -54,34 +54,7 @@ public class Ghost : MonoBehaviour {
 	
 	void Update ()
     {
-        /*if (Debug.isDebugBuild)
-        {
-            switch (type)
-            {
-                case Scripts.colors.blue:
-                    sprite = blue;
-                    break;
-                case Scripts.colors.red:
-                    sprite = red;
-                    break;
-                case Scripts.colors.green:
-                    sprite = green;
-                    break;
-                case Scripts.colors.cyan:
-                    sprite = cyan;
-                    break;
-                case Scripts.colors.magenta:
-                    sprite = magenta;
-                    break;
-                case Scripts.colors.yellow:
-                    sprite = yellow;
-                    break;
-                default:
-                    break;
-            }
-            gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
-        }*/
-        
+               
     }
 
     //------------------------------------------
