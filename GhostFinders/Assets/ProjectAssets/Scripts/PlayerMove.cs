@@ -3,11 +3,14 @@ using System.Collections;
 
 public class PlayerMove : MonoBehaviour {
 
+    [SerializeField]
     float playerMoveSpeed = 5.0f;
     PlayerController plController = null;
-	
+    Rigidbody rb;
+
     void Awake()
     {
+        rb = GetComponent<Rigidbody>();
         plController = GetComponentInChildren<PlayerController>();
     }
 
@@ -27,22 +30,22 @@ public class PlayerMove : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.W))
             {
-                transform.position += Vector3.forward * playerMoveSpeed * Time.deltaTime;
+                rb.AddForce(Vector3.forward * playerMoveSpeed);
             }
 
             if (Input.GetKey(KeyCode.S))
             {
-                transform.position -= Vector3.forward * playerMoveSpeed * Time.deltaTime;
+                rb.AddForce(-Vector3.forward * playerMoveSpeed);
             }
 
             if (Input.GetKey(KeyCode.A))
             {
-                transform.position -= Vector3.right * playerMoveSpeed * Time.deltaTime;
+                rb.AddForce(-Vector3.right * playerMoveSpeed);
             }
 
             if (Input.GetKey(KeyCode.D))
             {
-                transform.position += Vector3.right * playerMoveSpeed * Time.deltaTime;
+                rb.AddForce(Vector3.right * playerMoveSpeed);
             }
         }
     }
