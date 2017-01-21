@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour {
             else if (angle >= -67.5 && angle <= -22.5)
                 direction = Scripts.DIRECTION.D_DOWN_RIGHT;
             else
-                direction = DIRECTION.D_UNKNOWN;
+                direction = Scripts.DIRECTION.D_UNKNOWN;
 
             switch (direction)
             {

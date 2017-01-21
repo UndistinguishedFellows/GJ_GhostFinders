@@ -413,10 +413,10 @@
     <Compile Include="Assets\ParadoxNotion\NodeCanvas\Tasks\Conditions\Utility\Probability.cs" />
     <Compile Include="Assets\ParadoxNotion\NodeCanvas\Tasks\Conditions\Utility\Timeout.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\Ghost.cs" />
-    <Compile Include="Assets\ProjectAssets\Scripts\Scripts.cs" />
-    <Compile Include="Assets\ProjectAssets\Scripts\wander_steer.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\ProjectAssets\Scripts\PlayerMove.cs" />
+    <Compile Include="Assets\ProjectAssets\Scripts\Scripts.cs" />
+    <Compile Include="Assets\ProjectAssets\Scripts\SteeringWander.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\2DTilezoneFiles\CollisionData\dirt-tiles_collision_data.cd" />
