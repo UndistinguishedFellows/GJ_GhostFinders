@@ -14,7 +14,7 @@ public class ButtonsThings : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(exitGame) Application.Quit();
+        //if(exitGame) Application.Quit();
 
     }
 
@@ -31,7 +31,7 @@ public class ButtonsThings : MonoBehaviour {
     public void exit()
     {
         Debug.Log("EXIT");
-        Application.Quit();
+        SceneManager.LoadScene("ExitScene");
         exitGame = false;
     }
 
