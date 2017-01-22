@@ -6,21 +6,24 @@ public class LeadBoard : MonoBehaviour {
     public Score currentScore;
     List<Score> leadBoards;
 
+    int leadBoardSize = 5;
+
 	void Start ()
     {
+        currentScore = new Score("New Score");
         leadBoards = new List<Score>();
         SaveLoad.Load(ref leadBoards);
+        Debug.Log("Loaded leadboard file and got a " + leadBoards.Count + "list of scores.");
 
-        currentScore = new Score("New Score");
 	}
 	
 	void Update ()
     {
-        /*
-        if (Input.GetKeyDown(KeyCode.P))
+        /*if (Input.GetKeyDown(KeyCode.P))
         {
             onLevelEnd();
         }
+
         if (Input.GetKeyDown(KeyCode.L))
         {
             leadBoards = new List<Score>();
@@ -28,10 +31,11 @@ public class LeadBoard : MonoBehaviour {
 
             currentScore = new Score("New Score");
         }
+
         if (Input.GetKeyDown(KeyCode.K))
             currentScore.points += 10;
-
-        Debug.Log(currentScore.name + ": " + currentScore.points);*/
+        */
+        //Debug.Log(currentScore.name + ": " + currentScore.points);
     }
 
     //-----------------------------------
@@ -39,25 +43,29 @@ public class LeadBoard : MonoBehaviour {
     public void onLevelEnd()
     {
         //When a level is finished we should check if we have beat any record.
-
-        List<Score> newLeadBoard = new List<Score>();
-
-        if (leadBoards.Count < 3)
+        if (leadBoards.Count < leadBoardSize)
             leadBoards.Add(currentScore);
 
-        foreach (Score s in leadBoards)
+        bool record = false;
+        foreach(Score s in leadBoards)
         {
-            if (s.points >= currentScore.points)
-                newLeadBoard.Add(s);
-            else
-                newLeadBoard.Add(currentScore); //Record beated!!! TODO: Any feedback?
+            if (currentScore.points > s.points)
+                record = true;
         }
 
-        leadBoards.Clear();
-        leadBoards.AddRange(newLeadBoard);
+        if (record && leadBoards.Count >= leadBoardSize)
+            leadBoards.Add(currentScore);
+
+        //Sort the list again to make sure the last element is the one with less points.
+        leadBoards.Sort((s1, s2) => s1.CompareTo(s2));
+
+        //If we have added a new item and list is full, remove last.
+        if(record && leadBoards.Count >= leadBoardSize)
+        {
+            leadBoards.RemoveAt(leadBoards.Count - 1);
+        }
 
         //New we have the new lead board list ordered by points lets set their name.
-
         int i = 1;
         foreach(Score s in leadBoards)
         {

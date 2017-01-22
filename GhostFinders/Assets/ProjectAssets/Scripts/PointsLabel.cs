@@ -31,7 +31,7 @@ public class PointsLabel : MonoBehaviour
     Vector2 boxPosition;
     void Start()
     {
-        Debug.Log("Points Start");
+        //Debug.Log("Points Start");
         if (messagePermanent)
         {
             messageDuration = 2;
@@ -39,7 +39,7 @@ public class PointsLabel : MonoBehaviour
     }
     void OnGUI()
     {
-        Debug.Log("Points ONGUI");
+        //Debug.Log("Points ONGUI");
         if (messageDuration > 0)
         {
             if (!messagePermanent) // if you set this to false, you can simply use this script as a popup messenger, just set messageDuration to a value above 0
