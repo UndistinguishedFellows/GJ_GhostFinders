@@ -6,14 +6,14 @@ public class FlashlighManager : MonoBehaviour {
     GameObject[] lanterns;
     [SerializeField]
     PlayerController pController;
-    Scripts.colors current_color;
+
     Scripts.colors last_color = Scripts.colors.red;
-    // Use this for initialization
+
     void Start () {
 	
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
         if (last_color != pController.fLColor)
         {
