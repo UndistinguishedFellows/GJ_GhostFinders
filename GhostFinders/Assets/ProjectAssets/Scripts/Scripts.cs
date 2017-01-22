@@ -7,12 +7,12 @@ public class Scripts : MonoBehaviour {
     public enum colors
     {
         unknown = 0,
-        blue,
-        red,
+        red = 1,
+        yellow,
         green,
         cyan,
-        magenta,
-        yellow
+        blue,
+        magenta
     }
     public enum DIRECTION
     {
