@@ -7,18 +7,21 @@ public class FlashlighManager : MonoBehaviour {
     [SerializeField]
     PlayerController pController;
 
-    Scripts.colors last_color = Scripts.colors.red;
+    Scripts.colors last_color = Scripts.colors.unknown;
 
     void Start () {
-        lanterns[(int)last_color - 1].SetActive(false);
+        /*lanterns[(int)Scripts.colors.red - 1].SetActive(false);
         last_color = pController.fLColor;
-        lanterns[(int)last_color - 1].SetActive(true);
+        lanterns[(int)last_color - 1].SetActive(true);*/
     }
 	
 
 	void Update () {
         if (last_color != pController.fLColor)
         {
+            if ((int)last_color - 1 < 0)
+                last_color = (Scripts.colors)1;
+
             lanterns[(int)last_color - 1].SetActive(false);
             last_color = pController.fLColor;
             lanterns[(int)last_color - 1].SetActive(true);

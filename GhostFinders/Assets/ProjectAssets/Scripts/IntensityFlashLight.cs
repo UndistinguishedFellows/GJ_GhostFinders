@@ -10,7 +10,7 @@ public class IntensityFlashLight : MonoBehaviour {
     [SerializeField]
     PlayerController pController;
 
-    Scripts.colors last_color = Scripts.colors.red;
+    Scripts.colors last_color = Scripts.colors.unknown;
     int currentIndex = 0;
 
     void Start ()
@@ -27,6 +27,9 @@ public class IntensityFlashLight : MonoBehaviour {
     {
         if (last_color != pController.fLColor)
         {
+            if ((int)last_color - 1 < 0)
+                last_color = (Scripts.colors)1;
+
             last_color = pController.fLColor;
             //Tint
             wavesImg[currentIndex].color = Scripts.getColor(last_color);

@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour {
     Scripts.DIRECTION direction = Scripts.DIRECTION.D_UNKNOWN;
 
     Color flashLightColor = Color.white;
-    public Scripts.colors fLColor = Scripts.colors.blue;
+    public Scripts.colors fLColor = (Scripts.colors)1;
 
     [SerializeField]
     float intensity = 1.0f;
@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour {
         flashElapsed = flashDuration + 1;
         win = GetComponentInParent<Win>();
         pointsLabelScript = GetComponent<PointsLabel>();
+        fLColor = (Scripts.colors)1;
     }
 	
 	void Update ()
