@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     Win win = null;
     public bool endGame = false;
+
+    AudioSource flashAudio = null;
     
 
     //----------------------------
@@ -53,6 +55,7 @@ public class PlayerController : MonoBehaviour {
         ghostsDetected = new List<GameObject>();
         ghostsDetectedNow = new List<GameObject>();
         ray = new Ray();
+        flashAudio = GetComponent<AudioSource>();
     }
 
     void Start ()
@@ -310,6 +313,7 @@ public class PlayerController : MonoBehaviour {
         pointsLabelScript.showPoints(totalPoints);
 
         flashElapsed = 0.0f;
+        flashAudio.Play();
     }
 
 

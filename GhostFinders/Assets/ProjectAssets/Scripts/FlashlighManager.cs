@@ -10,8 +10,10 @@ public class FlashlighManager : MonoBehaviour {
     Scripts.colors last_color = Scripts.colors.red;
 
     void Start () {
-	
-	}
+        lanterns[(int)last_color - 1].SetActive(false);
+        last_color = pController.fLColor;
+        lanterns[(int)last_color - 1].SetActive(true);
+    }
 	
 
 	void Update () {
