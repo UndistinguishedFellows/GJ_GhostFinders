@@ -260,7 +260,7 @@ public class PlayerController : MonoBehaviour {
                 RaycastHit hit;
                 ray.origin = transform.position;
                 ray.direction = (col.transform.position - transform.position).normalized;
-                ray.origin = ray.GetPoint(frustum.nearClipPlane);
+                //ray.origin = ray.GetPoint(frustum.nearClipPlane);
 
                 if (Physics.Raycast(ray, out hit, frustum.farClipPlane, LayerMask.NameToLayer("Everything")))
                 {
