@@ -20,6 +20,9 @@ public class Win : MonoBehaviour {
     [SerializeField]
     LeadBoard lb = null;
     // Use this for initialization
+
+    public GameObject menu;
+
     void Start () {
 	    
 	}
@@ -36,6 +39,15 @@ public class Win : MonoBehaviour {
                 endGame = true;
                 lb.onLevelEnd();
             }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (menu.activeSelf) menu.SetActive(false);
+                else menu.SetActive(true);
+            }   
+            
+
+
         }
         float t = Mathf.Round(timeLeft * 1.0f) / 1.0f;
         timer.text = t.ToString();

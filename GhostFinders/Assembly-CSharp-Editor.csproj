@@ -45,9 +45,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\2DTilezoneFiles\Editor\TileInfoEditor.cs" />
-     <Compile Include="Assets\2DTilezoneFiles\Editor\TilesetEditor.cs" />
-     <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
      <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Inspectors\BlackboardInspector.cs" />
      <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Inspectors\GlobalBlackboardInspector.cs" />
      <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Inspectors\GraphInspector.cs" />
@@ -63,14 +60,8 @@
      <Compile Include="Assets\ParadoxNotion\NodeCanvas\Modules\DialogueTrees\Editor\DialogueActorInspector.cs" />
      <Compile Include="Assets\ParadoxNotion\NodeCanvas\Modules\DialogueTrees\Editor\DialogueTreeInspector.cs" />
      <Compile Include="Assets\ParadoxNotion\NodeCanvas\Modules\Editor\Commands.cs" />
-     <None Include="Assets\2DTilezoneFiles\CollisionData\roguelikeDungeon_collision_data.cd" />
-     <None Include="Assets\2DTilezoneFiles\CollisionData\dirt-tiles_collision_data.cd" />
      <None Include="Assets\ParadoxNotion\NodeCanvas\!ReadMe!.txt" />
-     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\ParadoxNotion\NodeCanvas\Framework\_Commons\Runtime\Serialization\_LICENSE - FULL SERIALIZER.txt" />
-     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
-     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
-     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -103,8 +94,6 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{58F23C4A-5A14-7680-EE97-58BDB6F1F993}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{FC2BB895-3183-8CA5-E32C-F2347CABBC32}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>

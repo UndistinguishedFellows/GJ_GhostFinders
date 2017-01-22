@@ -45,9 +45,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\2DTilezoneFiles\Scripts\AutoColliderGenerator.cs" />
-     <Compile Include="Assets\2DTilezoneFiles\Scripts\PixelPerfectCamera.cs" />
-     <Compile Include="Assets\2DTilezoneFiles\Scripts\TileInfo.cs" />
      <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\PartialEditor\BlackboardEditor.cs" />
      <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\PartialEditor\EDITOR_Connection.cs" />
      <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\PartialEditor\EDITOR_Graph.cs" />
@@ -411,24 +408,14 @@
      <Compile Include="Assets\ProjectAssets\Scripts\spawnManager.cs" />
      <Compile Include="Assets\SplashGlobalGameJamTimer.cs" />
      <Compile Include="Assets\creditsScreenExit.cs" />
-     <None Include="Assets\2DTilezoneFiles\CollisionData\roguelikeDungeon_collision_data.cd" />
-     <None Include="Assets\2DTilezoneFiles\CollisionData\dirt-tiles_collision_data.cd" />
      <None Include="Assets\ParadoxNotion\NodeCanvas\!ReadMe!.txt" />
-     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\ParadoxNotion\NodeCanvas\Framework\_Commons\Runtime\Serialization\_LICENSE - FULL SERIALIZER.txt" />
-     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
-     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
-     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{58F23C4A-5A14-7680-EE97-58BDB6F1F993}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
