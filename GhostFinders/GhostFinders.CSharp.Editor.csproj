@@ -99,19 +99,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="GhostFinders.CSharp.Plugins.csproj">
-      <Project>{4A21D3FD-ECAD-4AB4-E06C-1BDEBF200198}</Project>
-      <Name>GhostFinders.CSharp.Plugins</Name>
-    </ProjectReference>
     <ProjectReference Include="GhostFinders.CSharp.csproj">
       <Project>{2483F996-13F4-1640-A27B-021F58569121}</Project>
       <Name>GhostFinders.CSharp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\2DTilezoneFiles\Editor\TileInfoEditor.cs" />
-    <Compile Include="Assets\2DTilezoneFiles\Editor\TilesetEditor.cs" />
-    <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
     <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Inspectors\BlackboardInspector.cs" />
     <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Inspectors\GlobalBlackboardInspector.cs" />
     <Compile Include="Assets\ParadoxNotion\NodeCanvas\Framework\Design\Editor\Inspectors\GraphInspector.cs" />
@@ -129,14 +122,8 @@
     <Compile Include="Assets\ParadoxNotion\NodeCanvas\Modules\Editor\Commands.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\2DTilezoneFiles\CollisionData\dirt-tiles_collision_data.cd" />
-    <None Include="Assets\2DTilezoneFiles\CollisionData\roguelikeDungeon_collision_data.cd" />
     <None Include="Assets\ParadoxNotion\NodeCanvas\!ReadMe!.txt" />
     <None Include="Assets\ParadoxNotion\NodeCanvas\Framework\_Commons\Runtime\Serialization\_LICENSE - FULL SERIALIZER.txt" />
-    <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
-    <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
-    <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
-    <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
