@@ -28,6 +28,11 @@ public class ButtonsThings : MonoBehaviour {
         SceneManager.LoadScene("Tutorial");
     }
 
+    public void menu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void exit()
     {
         Debug.Log("EXIT");

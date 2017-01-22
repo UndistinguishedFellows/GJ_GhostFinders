@@ -15,7 +15,7 @@ public class SplashGlobalGameJamTimer : MonoBehaviour {
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= time)
         {
-            SceneManager.LoadScene("Level_1");
+            SceneManager.LoadScene("MainMenu");
         }
 	}
 }
