@@ -396,6 +396,7 @@
      <Compile Include="Assets\ProjectAssets\Scripts\Ghost.cs" />
      <Compile Include="Assets\ProjectAssets\Scripts\IntensityFlashLight.cs" />
      <Compile Include="Assets\ProjectAssets\Scripts\LeadBoard.cs" />
+     <Compile Include="Assets\ProjectAssets\Scripts\LeaderboardMenu.cs" />
      <Compile Include="Assets\ProjectAssets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\ProjectAssets\Scripts\PlayerControllerTuto.cs" />
      <Compile Include="Assets\ProjectAssets\Scripts\PlayerMove.cs" />
