@@ -89,7 +89,7 @@ public class LeadBoard : MonoBehaviour {
         int j = 0;
         foreach(Score s in leadBoards)
         {
-            labels[j].text = (j + 1).ToString() + ". " + s.name + ": " + s.points;
+            labels[j].text = (j + 1).ToString("#.##") + ". " + s.name + ": " + s.points;
             ++j;
         }
          if(j < 4) //If not 5 scores set text to ....
