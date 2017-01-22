@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour {
     Scripts.DIRECTION direction = Scripts.DIRECTION.D_UNKNOWN;
 
     Color flashLightColor = Color.white;
-    Scripts.colors fLColor = Scripts.colors.blue;
+    public Scripts.colors fLColor = Scripts.colors.blue;
 
     [SerializeField]
     float intensity = 1.0f;

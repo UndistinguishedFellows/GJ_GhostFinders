@@ -7,6 +7,8 @@ public class PlayerMove : MonoBehaviour {
     float playerMoveSpeed = 5.0f;
     PlayerController plController = null;
     Rigidbody rb;
+    [SerializeField]
+    Animator anim;
 
     void Awake()
     {
@@ -16,6 +18,7 @@ public class PlayerMove : MonoBehaviour {
 
 	void Start ()
     {
+        anim = GetComponentInChildren<Animator>();
 	    if(plController == null)
             plController = GetComponentInChildren<PlayerController>();
     }
@@ -30,22 +33,42 @@ public class PlayerMove : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.W))
             {
+                anim.SetInteger("State", 1);
                 rb.AddForce(Vector3.forward * playerMoveSpeed);
+            }
+            if (Input.GetKeyUp(KeyCode.W))
+            {
+                anim.SetInteger("State", 0);
             }
 
             if (Input.GetKey(KeyCode.S))
             {
+                anim.SetInteger("State", 1);
                 rb.AddForce(-Vector3.forward * playerMoveSpeed);
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                anim.SetInteger("State", 0);
             }
 
             if (Input.GetKey(KeyCode.A))
             {
+                anim.SetInteger("State", 1);
                 rb.AddForce(-Vector3.right * playerMoveSpeed);
+            }
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                anim.SetInteger("State", 0);
             }
 
             if (Input.GetKey(KeyCode.D))
             {
+                anim.SetInteger("State", 1);
                 rb.AddForce(Vector3.right * playerMoveSpeed);
+            }
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                anim.SetInteger("State", 0);
             }
         }
     }
