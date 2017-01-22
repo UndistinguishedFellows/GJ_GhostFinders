@@ -390,11 +390,15 @@
      <Compile Include="Assets\ParadoxNotion\NodeCanvas\Tasks\Conditions\Utility\DebugCondition.cs" />
      <Compile Include="Assets\ParadoxNotion\NodeCanvas\Tasks\Conditions\Utility\Probability.cs" />
      <Compile Include="Assets\ParadoxNotion\NodeCanvas\Tasks\Conditions\Utility\Timeout.cs" />
-     <Compile Include="Assets\ProjectAssets\Scripts\ExitButton.cs" />
+     <Compile Include="Assets\ProjectAssets\Scripts\ActivateOtherGhost.cs" />
+     <Compile Include="Assets\ProjectAssets\Scripts\ButtonsThings.cs" />
+     <Compile Include="Assets\ProjectAssets\Scripts\FlashlighManager.cs" />
      <Compile Include="Assets\ProjectAssets\Scripts\Ghost.cs" />
      <Compile Include="Assets\ProjectAssets\Scripts\LeadBoard.cs" />
      <Compile Include="Assets\ProjectAssets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\ProjectAssets\Scripts\PlayerControllerTuto.cs" />
      <Compile Include="Assets\ProjectAssets\Scripts\PlayerMove.cs" />
+     <Compile Include="Assets\ProjectAssets\Scripts\PlayerMoveTuto.cs" />
      <Compile Include="Assets\ProjectAssets\Scripts\PointsLabel.cs" />
      <Compile Include="Assets\ProjectAssets\Scripts\SaveLoad.cs" />
      <Compile Include="Assets\ProjectAssets\Scripts\Score.cs" />

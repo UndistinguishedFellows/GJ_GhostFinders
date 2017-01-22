@@ -19,7 +19,7 @@ public class TextAnim : MonoBehaviour {
 	void Update () {
         if (!cont.gameObject.activeSelf && click == true) cont.SetActive(true);
 
-        if (Input.GetMouseButtonDown(0) && cont.gameObject.activeSelf)
+        if ((Input.GetKey(KeyCode.KeypadEnter) || Input.GetKey(KeyCode.Return)) && cont.gameObject.activeSelf)
         {
             ant.SetActive(false);
             cont.SetActive(false);

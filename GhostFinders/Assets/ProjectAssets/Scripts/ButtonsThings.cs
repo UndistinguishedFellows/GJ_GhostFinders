@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class ExitButton : MonoBehaviour {
+public class ButtonsThings : MonoBehaviour {
 
     bool exitGame = false;
 
@@ -17,7 +18,17 @@ public class ExitButton : MonoBehaviour {
 
     }
 
-    public void onClick()
+    public void play()
+    {
+        SceneManager.LoadScene("Level_1");
+    }
+
+    public void tuto()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+
+    public void exit()
     {
         Debug.Log("EXIT");
         Application.Quit();

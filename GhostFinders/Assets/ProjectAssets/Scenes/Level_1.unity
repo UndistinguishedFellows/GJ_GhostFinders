@@ -3332,6 +3332,14 @@ Prefab:
       propertyPath: m_Name
       value: Global_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2036348, guid: 609d87a5955e852499d6ce383ea529b6, type: 2}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2036348, guid: 609d87a5955e852499d6ce383ea529b6, type: 2}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 609d87a5955e852499d6ce383ea529b6, type: 2}
   m_IsPrefabParent: 0
