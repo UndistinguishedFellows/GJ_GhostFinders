@@ -400,6 +400,8 @@
      <Compile Include="Assets\ProjectAssets\Scripts\Score.cs" />
      <Compile Include="Assets\ProjectAssets\Scripts\Scripts.cs" />
      <Compile Include="Assets\ProjectAssets\Scripts\SteeringWander.cs" />
+     <Compile Include="Assets\ProjectAssets\Scripts\TextAnim.cs" />
+     <Compile Include="Assets\ProjectAssets\Scripts\Win.cs" />
      <Compile Include="Assets\ProjectAssets\Scripts\spawnManager.cs" />
      <None Include="Assets\2DTilezoneFiles\CollisionData\roguelikeDungeon_collision_data.cd" />
      <None Include="Assets\2DTilezoneFiles\CollisionData\dirt-tiles_collision_data.cd" />
