@@ -38,9 +38,9 @@ public class Win : MonoBehaviour {
             }
         }
         float t = Mathf.Round(timeLeft * 1.0f) / 1.0f;
-        timer.text = t.ToString() + " seconds";
-        ghostsLeft.text = "Ghosts left: " + spawner.GetComponent<spawnManager>().ghostCounter.ToString();
-        points.text = "Points: " + lb.currentScore.points.ToString();
+        timer.text = t.ToString();
+        ghostsLeft.text = "Ghosts: " + spawner.GetComponent<spawnManager>().ghostCounter.ToString();
+        points.text = lb.currentScore.points.ToString("#.##");
 
         if (endGame)
         {
